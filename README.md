@@ -13,7 +13,7 @@ npm i js-scanner-detection
 ## 💎 Example Usage
 
 ```js
-import 'ScannerDetector' from 'ScannerDetector'
+import ScannerDetector from 'js-scanner-detection'
 let onComplete = (barcode)=>{
   // Do stuff with the barcode
   console.log(barcode)

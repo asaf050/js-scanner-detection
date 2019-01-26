@@ -1,6 +1,6 @@
 /*!
  * 
- *   js-scanner-detection v1.0.0
+ *   js-scanner-detection v1.0.1
  *   https://github.com/asaf050/js-scanner-detection
  * 
  *   Copyright (c) Asaf Cohen (https://github.com/asaf050)
