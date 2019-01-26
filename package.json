@@ -1,5 +1,5 @@
 {
-  "name": "@asaf050/js-js-scanner-detection",
+  "name": "js-scanner-detection",
   "version": "1.0.0",
   "main": "build/index.js",
   "scripts": {

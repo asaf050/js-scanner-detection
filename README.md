@@ -7,7 +7,7 @@
 ## 📦 Getting Started
 
 ```
-npm i @asaf050/js-scanner-detection
+npm i js-scanner-detection
 ```
 
 ## 💎 Example Usage
@@ -18,10 +18,13 @@ let onComplete = (barcode)=>{
   // Do stuff with the barcode
   console.log(barcode)
 }
-let scannerDetector = new ScannerDetector({onComplete})
+let options = {
+  onComplete:onComplete
+}
+let scannerDetector = new ScannerDetector(options)
 ```
 
-## 💎 Customization
+## ✅ Options
 
 ```js
 {
