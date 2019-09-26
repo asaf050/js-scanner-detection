@@ -86,6 +86,9 @@ class ScannerDetection {
     this.firstCharTime = 0
     this.stringWriting = ''
   }
+  stopScanning() {
+    document.onkeypress = null;
+  }
 }
 
 export default ScannerDetection

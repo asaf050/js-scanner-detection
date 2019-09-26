@@ -22,6 +22,10 @@ let options = {
   onComplete:onComplete
 }
 let scannerDetector = new ScannerDetector(options)
+
+// To remove the event listener and stop the scanner
+scannerDetector.stopScanning()
+
 ```
 
 ## ✅ Options
