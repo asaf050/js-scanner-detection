@@ -4,6 +4,7 @@ class App {
     let onComplete = function (s) {
       console.log(s)
       document.getElementById('scannerInput').value = s
+      this.stopScanning()
     }
     let onError = e => {
       console.log(`Not a valid scanning`)
@@ -11,7 +12,7 @@ class App {
     let onReceive = e => {
       console.log(e)
     }
-    new ScannerDetection({ onComplete, onError, onReceive })
+   this.scanner = new ScannerDetection({ onComplete, onError, onReceive })
   }
 }
 
