@@ -22,7 +22,8 @@ class ScannerDetection {
     this.stringWriting = ''
     this.callIsScanner = false
     this.testTimer = false
-    document.onkeypress = this.keypress.bind(this)
+    this.boundKeypress = this.keypress.bind(this);
+    document.addEventListener('keypress', this.boundKeypress)
   }
   keypress (e) {
     if (this.options.stopPropagation) e.stopImmediatePropagation()
@@ -87,7 +88,7 @@ class ScannerDetection {
     this.stringWriting = ''
   }
   stopScanning() {
-    document.onkeypress = null;
+    document.removeEventListener('keypress', this.boundKeypress)
   }
 }
 
