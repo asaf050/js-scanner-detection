@@ -22,12 +22,16 @@ class ScannerDetection {
     this.stringWriting = ''
     this.callIsScanner = false
     this.testTimer = false
+    this.focusedElement = null
     this.boundKeypress = this.keypress.bind(this);
     document.addEventListener('keypress', this.boundKeypress)
   }
   keypress (e) {
     if (this.options.stopPropagation) e.stopImmediatePropagation()
     if (this.options.preventDefault) e.preventDefault()
+    if (this.focusedElement === null) {
+      this.focusedElement = e.target
+    }
 
     if (this.firstCharTime && this.options.endChar.indexOf(e.which) !== -1) {
       e.preventDefault()
@@ -54,9 +58,7 @@ class ScannerDetection {
     }
 
     if (this.options.onReceive) this.options.onReceive.call(this, e)
-    this.trigger('scannerDetectionReceive', { evt: e })
   }
-  trigger (options) {}
   scannerDetectionTest (s) {
     // If string is given, test it
     if (s) {
@@ -86,6 +88,7 @@ class ScannerDetection {
   initScannerDetection () {
     this.firstCharTime = 0
     this.stringWriting = ''
+    this.focusedElement = null
   }
   stopScanning() {
     document.removeEventListener('keypress', this.boundKeypress)
